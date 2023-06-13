@@ -1,0 +1,68 @@
+<section>
+  <h1>Request a Consultation</h1>
+
+  <form action="" #registerForm="ngForm"  (ngSubmit)="createConsultation(registerForm.value)">
+    <div class="info">
+      <div class="title ">
+        <p>Information on Consultation</p>
+        <hr>
+      </div>
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="service">Service</label>
+          <select name="service" (change)="displayMedecin($event)"
+            [(ngModel)]="consultation.price"
+            #service = "ngModel"
+            [ngClass]="{'is-invalid': service.touched && !service.valid}"
+            required>
+            <option value="" disabled selected> Selectionner un service</option>
+            <option *ngFor="let service of services" value={{service.id}}>{{service.name}}</option>
+
+          </select>
+      </div>
+
+        <!-- <div class="block-input">
+          <label for="surname">Medicin</label>
+          <select name="medecin"
+            [(ngModel)]="consultation.medecinId"
+            #medecin = "ngModel"
+            [ngClass]="{'is-invalid': medecin.touched && !medecin.valid}"
+            required>
+            <option value="" disabled selected> Selectionner un medecin</option>
+            <option *ngFor="let medecin of medecins" value={{medecin.id}}>{{medecin.name}} {{medecin.surname}}</option>
+          </select>
+      </div> -->
+      </div>
+
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="date">Date</label>
+          <input type="date" name="date" [(ngModel)]="consultation.date" #date = "ngModel" [ngClass]="{'is-invalid': date.touched && !date.valid}" required >
+        </div>
+
+        <div class="block-input">
+          <label for="hour">Hours</label>
+          <input type="time" name="hour" [(ngModel)]="consultation.hour" #hour = "ngModel" [ngClass]="{'is-invalid': hour.touched && !hour.valid}" required >
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="buttons">
+      <button type="submit" [disabled]="!registerForm.form.valid">Send</button>
+      <button type="reset" (click)="displayMedecin($event)">Reset</button>
+    </div>
+
+
+
+
+
+
+
+
+  </form>
+
+</section>
+

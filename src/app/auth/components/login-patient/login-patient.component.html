@@ -1,0 +1,49 @@
+<section>
+  <div class="col">
+      <h1 routerLink="/">Welcome to <br> GetHos</h1>
+      <p>Quality care for better health</p>
+      <img src="../../assets/images/Hospitalwheelchair-cuate.png" alt="">
+  </div>
+
+  <div class="col">
+    <h1>Login Patient</h1>
+    <form action="" #registerForm = "ngForm" (ngSubmit)="onLoginPatient(registerForm.value)">
+
+      <div class="block-input">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter your email"
+        [(ngModel)]="patient.email"
+        #email = "ngModel"
+        [ngClass]="{'is-invalid': email.touched && !email.valid}"
+        required>
+      </div>
+
+      <div class="block-input">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your password"
+        [(ngModel)]="patient.password"
+        #password = "ngModel"
+        [ngClass]="{'is-invalid': email.touched && !email.valid}"
+        required>
+      </div>
+
+      <div class="row">
+        <input type="checkbox" name="" id="">
+        <p>I do not have an account ? <span [routerLink]="['../sign-patient']">Sign Up</span></p>
+      </div>
+
+      <button type="submit" [disabled]="!registerForm.form.valid">LOGIN</button>
+
+      <div class="row-with">
+        <span></span><p>or login with</p><span></span>
+      </div>
+
+      <div class="block-account">
+        <button>Google</button>
+        <button>Icloud</button>
+        <button>Facebook</button>
+      </div>
+
+    </form>
+  </div>
+</section>

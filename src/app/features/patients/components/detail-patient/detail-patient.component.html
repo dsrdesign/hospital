@@ -1,0 +1,113 @@
+<section>
+  <h1>Patient Detail</h1>
+
+  <form action="" #registerForm="ngForm" >
+    <div class="info">
+      <div class="title ">
+        <p>Personnal informations</p>
+        <hr>
+      </div>
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Enter your name"  #name = "ngModel" [(ngModel)]="patient.name" [ngClass]="{'is-invalid': name.touched && !name.valid}" placeholder="Claude"  disabled required >
+        </div>
+
+        <div class="block-input">
+          <label for="surname">Surname</label>
+          <input type="text" name="surname" placeholder="Enter your surname"[(ngModel)]="patient.surname" #surname = "ngModel" [ngClass]="{'is-invalid': surname.touched && !surname.valid}"  placeholder="Robert" disabled  required >
+        </div>
+      </div>
+
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="sexe">Sex</label>
+          <div class="checks">
+            Masculin<input type="radio" [(ngModel)]="patient.sex" value="M" name="sex" checked>
+            Feminin<input type="radio" [(ngModel)]="patient.sex" value="F" name="sex" >
+          </div>
+
+        </div>
+
+        <div class="block-input">
+          <label for="dateEntry">Date Entry</label>
+          <input type="date" name="dateEntry" [(ngModel)]="patient.dateEntry" #dateEntry = "ngModel" [ngClass]="{'is-invalid': dateEntry.touched && !dateEntry.valid}" value="01-02-2002" disabled required >
+        </div>
+      </div>
+
+      <div class="blocks-input">
+
+        <div class="block-input">
+          <label for="service">Salle</label>
+          <select name="codeSalle"
+              [(ngModel)]="patient.codeSalle"
+              #codeSalle = "ngModel"
+              [ngClass]="{'is-invalid': codeSalle.touched && !codeSalle.valid}"
+              required>
+              <option value="" disabled selected> Selectionner une salle</option>
+              <option *ngFor="let salle of salles"  value={{salle.codeSalle}}>{{salle.name}}</option>
+          </select>
+        </div>
+
+        <div class="block-input">
+          <label for="nurse">Does the patient have a nurse ?</label>
+          <div class="checks">
+            Yes<input type="radio" checked value="yes" name="nurse"  (click)="displayNurse()" >
+            No<input type="radio" value="no" name="nurse"   (click)="noneNurse()" >
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="info" id="nurse" style="display: none;">
+      <div class="title ">
+        <p>Garde informations</p>
+        <hr>
+      </div>
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="nameNurse">Name nurse</label>
+          <input type="text" name="nameNurse" placeholder="Enter your name"  #nameNurse = "ngModel" [(ngModel)]="nurse.name" [ngClass]="{'is-invalid': nameNurse.touched && !nameNurse.valid}" disabled>
+        </div>
+
+        <div class="block-input">
+          <label for="surnameNurse">Surname Nurse</label>
+          <input type="text" name="surnameNurse" placeholder="Enter your surname"[(ngModel)]="nurse.surname" #surnameNurse = "ngModel" [ngClass]="{'is-invalid': surnameNurse.touched && !surnameNurse.valid}" disabled>
+        </div>
+      </div>
+
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="sexNurse">Sex Nurse</label>
+          <div class="checks">
+            M<input type="radio" value="M" name="sexNurse" [(ngModel)]="nurse.sex" #sexNurse = "ngModel"  >
+            F<input type="radio" value="F" name="sexNurse" [(ngModel)]="nurse.sex" #sexNurse = "ngModel"  >
+          </div>
+
+        </div>
+
+        <div class="block-input">
+          <label for="dateEntry">CNI number of Nurse</label>
+          <input type="number" name="cniNurse" placeholder="Enter your surname"[(ngModel)]="nurse.numCNI" #cniNurse = "ngModel" [ngClass]="{'is-invalid': cniNurse.touched && !cniNurse.valid}"  disabled>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">Update</button>
+      <button type="reset">Save</button>
+      <button>Prescibe Treatment</button>
+    </div>
+
+
+
+
+
+
+
+
+  </form>
+
+</section>
+

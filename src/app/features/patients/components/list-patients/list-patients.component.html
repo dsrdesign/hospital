@@ -1,0 +1,68 @@
+<section>
+  <h1>Patient List</h1>
+
+  <div class="row">
+
+     <div class="filter">
+
+      <select name="codeService"
+        required>
+        <option value="" disabled selected> Date of entry</option>
+        <option value="service"></option>
+      </select>
+
+      <select name="codeService"
+        required>
+        <option value="" disabled selected> Release Date</option>
+        <option value="service"></option>
+      </select>
+
+    </div>
+
+    <button [routerLink]="['/patient/create']">
+      <svg class="feather feather-user-plus" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" x2="20" y1="8" y2="14"/><line x1="23" x2="17" y1="11" y2="11"/></svg>
+      Register Patient
+    </button>
+  </div>
+
+
+  <div class="list">
+    <table>
+      <thead>
+        <tr>
+          <th style="  border-radius: 5px 0px 0px 5px;"></th>
+          <th >Name</th>
+          <th>Surname</th>
+          <th>Sex</th>
+          <th>Date of entry</th>
+          <th class="tabMask2">Salle</th>
+          <th id="action" style="  border-radius: 0px 5px 5px 0px;">Action</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let patient of patients" >
+          <td data-label=""><input type="checkbox"></td>
+          <td data-label="Name" [routerLink]="['detail-patient']">{{patient.name}}</td>
+          <td data-label="Surname" [routerLink]="['detail-patient']">{{patient.surname}}</td>
+          <td data-label="Sex">{{patient.sex}}</td>
+          <td data-label="DateEntry" class="tabMask2" >01-01-2023</td>
+          <td data-label="Salle">{{patient.codeSalle}}</td>
+          <td data-label="Action" class="action">
+            <pre>Action <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="m15.344 17.778c0-.414-.336-.75-.75-.75h-5.16c-.414 0-.75.336-.75.75s.336.75.75.75h5.16c.414 0 .75-.336.75-.75zm2.206-4c0-.414-.336-.75-.75-.75h-9.596c-.414 0-.75.336-.75.75s.336.75.75.75h9.596c.414 0 .75-.336.75-.75zm2.45-4c0-.414-.336-.75-.75-.75h-14.5c-.414 0-.75.336-.75.75s.336.75.75.75h14.5c.414 0 .75-.336.75-.75zm2-4c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg></pre>
+            <div class="dropdown">
+              <ul>
+                <li [routerLink]="['detail-patient']"><img src=".//src/assets/images/editer.png" alt=""> Editer</li>
+                <li (click)="archivePatient(patient.id)"><img src=".//src/assets/images/supprimer.png" alt=""> Archived</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</section>
+

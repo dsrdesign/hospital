@@ -1,0 +1,76 @@
+section{
+  /* position: absolute; */
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.welcomes{
+  width: 98%;
+  display: flex;
+  justify-content: space-around ;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  /* padding: 0px 15px; */
+
+}
+.welcomes .welcome{
+
+}
+
+.welcomes .welcome h1{
+  font-size: 2em;
+}
+
+.welcomes .welcome h1 span{
+  color: #0098fb;
+  text-transform: capitalize;
+}
+
+.welcomes img{
+
+  width: 250px;
+  margin-top: -80px;
+  bottom: 0;
+
+}
+
+.blocks{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.blocks .block{
+  width: 29%;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.blocks .block .detail-block{
+  margin-left: 10px;
+}
+
+.blocks .graphe{
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px;
+}

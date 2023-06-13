@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import '/node_modules/ngx-toastr/toastr.css';
+
+
+*{
+  font-family: "ubuntu";
+  margin: 0;
+  padding: 0;
+  /* color: #0c4265; */
+}
+h1,h2,h3,h4,h5,h6,p{
+    color: #0c4265;
+
+}

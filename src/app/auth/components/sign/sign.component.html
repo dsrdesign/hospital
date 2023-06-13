@@ -1,0 +1,88 @@
+<section>
+  <div class="col">
+      <h1 routerLink="/">Welcome to <br> GetHos</h1>
+      <p>Quality care for better health</p>
+      <img src="../../assets/images/Doctor-pana.png" alt="">
+  </div>
+
+  <div class="col">
+    <h1>Sign Up</h1>
+    <form action="" #registerForm="ngForm" (ngSubmit)="onSign(registerForm.value)">
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Enter your name"
+          [(ngModel)]="medecin.name"
+            #name = "ngModel"
+            [ngClass]="{'is-invalid': name.touched && !name.valid}"
+            required>
+        </div>
+
+        <div class="block-input">
+          <label for="surname">Surname</label>
+          <input type="text" name="surname" placeholder="Enter your surname"
+          [(ngModel)]="medecin.surname"
+            #surname = "ngModel"
+            [ngClass]="{'is-invalid': surname.touched && !surname.valid}"
+            required>
+        </div>
+
+      </div>
+
+      <div class="block-input">
+        <label for="service">Service</label>
+        <select name="codeService"
+            [(ngModel)]="medecin.codeService"
+            #codeService = "ngModel"
+            [ngClass]="{'is-invalid': codeService.touched && !codeService.valid}"
+            required>
+            <option value="" disabled selected> Selectionner une categorie</option>
+            <option *ngFor="let service of services " value={{service.id}}>{{service.name}}</option>
+
+
+        </select>
+      </div>
+
+      <div class="blocks-input">
+        <div class="block-input">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Enter your email"
+          [(ngModel)]="medecin.email"
+            #email = "ngModel"
+            [ngClass]="{'is-invalid': email.touched && !email.valid}"
+            required>
+        </div>
+
+        <div class="block-input">
+          <label for="password">password</label>
+          <input type="password" name="password" placeholder="Enter Password"
+          [(ngModel)]="medecin.password"
+            #password = "ngModel"
+            [ngClass]="{'is-invalid': password.touched && !password.valid}"
+            required>
+        </div>
+
+      </div>
+
+
+
+      <div class="row">
+        <input type="checkbox" name="" id="">
+        <p>I have an account ? <span [routerLink]="['../login']">Login</span></p>
+      </div>
+
+      <button type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>
+
+      <div class="row-with">
+        <span></span><p>or sign up with</p><span></span>
+      </div>
+
+      <div class="block-account">
+        <button>Google</button>
+        <button>Icloud</button>
+        <button>Facebook</button>
+      </div>
+
+    </form>
+  </div>
+</section>

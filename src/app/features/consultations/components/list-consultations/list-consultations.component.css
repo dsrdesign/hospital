@@ -1,0 +1,156 @@
+section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+h1{
+  font-size: 2em;
+  color: #0098fb;
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+
+.row .filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row .filter select{
+  padding: 5px;
+  background-color: ;
+  color: #0c4265;
+  border: none;
+  border-radius: 5px;
+  outline: 1px solid #0c4265;
+  margin-right: 10px;
+}
+
+.row .filter select:focus{
+  outline: 2px solid #0098fb;
+}
+
+.row button{
+  padding: 10px;
+  background-color: #0098fb ;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  /* outline: 1px solid #0c4265; */
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* cursor: cell; */
+}
+
+.row button:hover {
+  background-color: #80cbfd;
+}
+
+table{
+  width:100%;
+  /* margin-bottom: 100px; */
+  border-collapse: collapse;
+  box-shadow: inset 0 0em 0.0em rgba(8, 10, 129, 0.1), 0 0 0 0px rgb(255, 255, 255), 0em 0em 0.5em rgba(145, 144, 144, 0.3);
+}
+
+
+th, td {
+  padding: 10px 5px;
+  text-align: left;
+  max-width: 100px;
+
+}
+
+th{
+  background-color: #0098fb;
+  color: #fff;
+  font-size: 1.2em;
+}
+tr:nth-child(odd){
+  background-color: #eee;
+}
+
+tr{
+  cursor:cell;
+}
+
+tr th#action{
+  text-align: center;
+}
+
+
+tr td.action pre{
+  color: #0098fb;
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 2px solid #0098fb;
+}
+
+tr td.action pre svg{
+  width: 15px;
+  color: #0098fb;
+}
+
+tr td.action:hover pre svg{
+  color: #fff;
+}
+
+tr td.action:hover pre{
+  background-color: #0098fb;
+  color: #fff;
+}
+
+tr td.action .dropdown{
+  display: none;
+  position: absolute;
+}
+
+tr td.action:hover .dropdown{
+  margin-top: 0px;
+  padding: 0px 0px;
+  display: block;
+  position: absolute;
+  background-color: #0098fb;
+  box-shadow: 1px 1px 5px #fff;
+  border-radius: 0px 0px 5px 5px;
+  margin-left: 0px;
+}
+tr td.action .dropdown ul {
+  text-align: left;
+  width: 100;
+}
+tr td.action .dropdown ul li {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.7em;
+  color: #fff;
+  cursor: pointer;
+
+}
+tr td.action .dropdown ul li:hover{
+  background-color: #3e8ee9;
+
+}
+
+tr td.action .dropdown ul li  img{
+
+  width: 10px;
+  margin-right: 5px;
+}

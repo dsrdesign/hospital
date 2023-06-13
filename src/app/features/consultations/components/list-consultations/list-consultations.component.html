@@ -1,0 +1,70 @@
+<section>
+  <h1>List of Consultations</h1>
+
+  <div class="row">
+
+     <div class="filter">
+
+      <select name="codeService"
+        required>
+        <option value="" disabled selected> Consultation status</option>
+        <option value="service">Valid</option>
+        <option value="service">Rejected</option>
+      </select>
+
+      <select name="codeService"
+        required>
+        <option value="" disabled selected> Release Date</option>
+        <option value="service"></option>
+      </select>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="list">
+    <table>
+      <thead>
+        <tr>
+          <th style="  border-radius: 5px 0px 0px 5px;"></th>
+          <th >N</th>
+          <th >Name</th>
+          <th>Surname</th>
+          <th>Sex</th>
+          <th>Date</th>
+          <th class="tabMask2">Hour</th>
+          <th class="tabMask2">Status</th>
+          <th id="action" style="  border-radius: 0px 5px 5px 0px;">Action</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let consultation of consultations">
+          <td data-label=""><input type="checkbox"></td>
+          <td data-label="Number" >{{consultation.id}}</td>
+          <td data-label="Service">{{consultation.Patient.name}}</td>
+          <td data-label="Medecin">{{consultation.Patient.surname}}</td>
+          <td data-label="Price">{{consultation.Patient.sex}}</td>
+          <td data-label="Date" class="tabMask2" >{{consultation.date}}</td>
+          <td data-label="Hour">{{consultation.hour}}</td>
+          <td data-label="Status"><button (click)="validConsultation(consultation.id, consultation.patientId)">Accepter</button></td>
+          <td data-label="Action" class="action">
+            <pre>Action <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="m15.344 17.778c0-.414-.336-.75-.75-.75h-5.16c-.414 0-.75.336-.75.75s.336.75.75.75h5.16c.414 0 .75-.336.75-.75zm2.206-4c0-.414-.336-.75-.75-.75h-9.596c-.414 0-.75.336-.75.75s.336.75.75.75h9.596c.414 0 .75-.336.75-.75zm2.45-4c0-.414-.336-.75-.75-.75h-14.5c-.414 0-.75.336-.75.75s.336.75.75.75h14.5c.414 0 .75-.336.75-.75zm2-4c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg></pre>
+            <div class="dropdown">
+              <ul>
+                <li><img src=".//src/assets/images/editer.png" alt=""> Editer</li>
+                <li><img src=".//src/assets/images/supprimer.png" alt=""> Supprimer</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
